@@ -1,0 +1,72 @@
+# Main Window
+<MainWindow>:
+    name: "main"
+    status: status.__self__
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba : 1, 1, 1, 1
+            Rectangle:
+                size:self.size
+        MDCard:
+            size_hint: 0.8, 0.50
+            size: "280dp", "180dp"
+            pos_hint: {"center_x": .5, "center_y": .50}
+            md_bg_color: 1, 1, 1, 1
+            border_radius: 20
+            elevation: 0
+            radius: [15]
+            FloatLayout:
+                Image:
+                    source: 'logo.png'
+                    pos_hint: {"center_x": .5, "center_y": .48}
+                    size: self.size
+                MDLabel:
+                    font_size: "15dp"
+                    text: "category"
+                    font_style: "Overline"
+                    bold: "True"
+                    color_mode: 'custom'
+                    size_hint_x: 0.75
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    pos_hint: {'center_x': 0.48, 'center_y': 0.65}
+                MDTextField:
+                    id: status
+                    font_size: "15dp"
+                    text: "Regular"
+                    hint_text: "    "
+                    bold: True
+                    disabled: True
+                    color_mode: 'custom'
+                    mode: "rectangle"
+                    size_hint_x: 0.75
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.50}
+                MDFlatButton:
+                    text: "PROCEED"
+                    font_name: "RobotoMedium"
+                    font_size: "12dp"
+                    text_color: [1, 1, 1, 1]
+                    size_hint_x: 0.65
+                    increment_width: "80dp"
+                    pos_hint: {'center_x': 0.55, 'center_y': 0.30}
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        app.root.current = "second"
+                        root.manager.transition.direction = "left"
+                MDCheckbox:
+                    pos_hint: {'center_x': 0.15, 'center_y': 0.30}
+                    size_hint: .1, .1
+                    selected_color: 0, 0, 0, 1
+                    on_active: root.category_(*args)
+                MDLabel:
+                    markup: True
+                    text: "[b]NOTE:[/b] Tap the checkbox to change category."
+                    size_hint_x: 0.70
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.13}
+                    font_style: "Caption"
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]

@@ -1,0 +1,425 @@
+# Second Window
+<SecondWindow>:
+    name: "second"
+    starting_place1: starting_place1.__self__
+    destination1: destination1.__self__
+    passenger1: passenger1.__self__
+    minimum_fare1: minimum_fare1.__self__
+    starting_place2: starting_place2.__self__
+    destination2: destination2.__self__
+    passenger2: passenger2.__self__
+    minimum_fare2: minimum_fare2.__self__
+    starting_place3: starting_place3.__self__
+    destination3: destination3.__self__
+    passenger3: passenger3.__self__
+    minimum_fare3: minimum_fare3.__self__
+    MDFloatLayout:
+        Carousel:
+            # Route 1
+            FloatLayout:
+                MDLabel:
+                    text: "City of Imus - Indang, Cavite (Vice-Versa)"
+                    size_hint_x: 0.75
+                    halign: "center"
+                    bold: True
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.78}
+                    font_style: "H6"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "ROUTE"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.87}
+                    halign: "center"
+                    font_style: "Caption"
+                    bold: True
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "No. of Passenger"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "Minimum Fare"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.9, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: starting_place1
+                    mode: "rectangle"
+                    hint_text: "     "
+                    disabled: True
+                    pos_hint: {'center_x': 0.60, 'center_y': 0.60}
+                    size_hint_x: 0.5
+                    line_color_normal: 0, 0, 0, 1
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    width: "200dp"
+                    font_size: "15dp"
+                MDIconButton
+                    icon: "bus"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.60}
+                    size_hint_x: None
+                    on_release:
+                        root.route1()
+                MDLabel:
+                    text: "Where did you ride the jeepney?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.67}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: destination1
+                    hint_text: "     "
+                    disabled: True
+                    mode: "rectangle"
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    pos_hint: {'center_x': 0.6, 'center_y': 0.45}
+                    size_hint_x: 0.5
+                    width: "200dp"
+                    font_size: "15dp"
+                MDLabel:
+                    text: "Where are you headed?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.52}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDIconButton
+                    icon: "magnify"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.45}
+                    size_hint_x: None
+                    on_release:
+                        root.revroute1()
+                MDTextField:
+                    id: passenger1
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '1'
+                    pos_hint: {'center_x': 0.30, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDTextField:
+                    id: minimum_fare1
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '9'
+                    pos_hint: {'center_x': 0.7, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDIconButton:
+                    icon: "arrow-left"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.20}
+                    size_hint_x: None
+                    user_font_size: "20dp"
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "right"
+                MDFlatButton:
+                    text: "SUBMIT"
+                    font_name: "RobotoMedium"
+                    font_size: "12dp"
+                    increment_width: "60dp"
+                    text_color: [1, 1, 1, 1]
+                    pos_hint: {'center_x': 0.65, 'center_y': 0.20}
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        root.validate1()
+                MDIconButton
+                    icon: "refresh"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.35, 'center_y': 0.20}
+                    size_hint_x: None
+                    on_release:
+                        root.refresh1()
+                MDLabel:
+                    markup: True
+                    text: "[b]NOTE:[/b] Swipe the screen to change route."
+                    size_hint_x: 0.60
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.10}
+                    font_style: "Caption"
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+            # Route 2
+            FloatLayout:
+                MDLabel:
+                    text: "Dasmariñas Bagong Bayan - Imus (TP) (Vice-Versa)"
+                    size_hint_x: 0.75
+                    halign: "center"
+                    bold: True
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.78}
+                    font_style: "H6"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "ROUTE"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.87}
+                    halign: "center"
+                    font_style: "Caption"
+                    bold: True
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "No. of Passenger"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "Minimum Fare"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.9, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: starting_place2
+                    mode: "rectangle"
+                    hint_text: "     "
+                    disabled: True
+                    pos_hint: {'center_x': 0.60, 'center_y': 0.60}
+                    size_hint_x: 0.5
+                    line_color_normal: 0, 0, 0, 1
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    width: "200dp"
+                    font_size: "15dp"
+                MDIconButton
+                    icon: "bus"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.60}
+                    size_hint_x: None
+                    on_release:
+                        root.route2()
+                MDLabel:
+                    text: "Where did you ride the jeepney?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.67}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: destination2
+                    hint_text: "     "
+                    disabled: True
+                    mode: "rectangle"
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    pos_hint: {'center_x': 0.6, 'center_y': 0.45}
+                    size_hint_x: 0.5
+                    width: "200dp"
+                    font_size: "15dp"
+                MDLabel:
+                    text: "Where are you headed?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.52}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDIconButton
+                    icon: "magnify"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.45}
+                    size_hint_x: None
+                    on_release:
+                        root.revroute2()
+                MDTextField:
+                    id: passenger2
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '1'
+                    pos_hint: {'center_x': 0.30, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDTextField:
+                    id: minimum_fare2
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '9'
+                    pos_hint: {'center_x': 0.7, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDIconButton:
+                    icon: "arrow-left"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.20}
+                    size_hint_x: None
+                    user_font_size: "20dp"
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "right"
+                MDFlatButton:
+                    text: "SUBMIT"
+                    font_name: "RobotoMedium"
+                    font_size: "12dp"
+                    increment_width: "60dp"
+                    text_color: [1, 1, 1, 1]
+                    pos_hint: {'center_x': 0.65, 'center_y': 0.20}
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        root.validate2()
+                MDIconButton
+                    icon: "refresh"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.35, 'center_y': 0.20}
+                    size_hint_x: None
+                    on_release:
+                        root.refresh2()
+            # Route 3
+            FloatLayout:
+                MDLabel:
+                    text: "Silang - Zapote (Vice-Versa)"
+                    size_hint_x: 0.75
+                    halign: "center"
+                    bold: True
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.78}
+                    font_style: "H6"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "ROUTE"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.87}
+                    halign: "center"
+                    font_style: "Caption"
+                    bold: True
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "No. of Passenger"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDLabel:
+                    text: "Minimum Fare"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.9, 'center_y': 0.35}
+                    font_style: "Overline"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: starting_place3
+                    mode: "rectangle"
+                    hint_text: "     "
+                    disabled: True
+                    pos_hint: {'center_x': 0.60, 'center_y': 0.60}
+                    size_hint_x: 0.5
+                    line_color_normal: 0, 0, 0, 1
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    width: "200dp"
+                    font_size: "15dp"
+                MDIconButton
+                    icon: "bus"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.60}
+                    size_hint_x: None
+                    on_release:
+                        root.route3()
+                MDLabel:
+                    text: "Where did you ride the jeepney?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.67}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDTextField:
+                    id: destination3
+                    hint_text: "     "
+                    disabled: True
+                    mode: "rectangle"
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    pos_hint: {'center_x': 0.6, 'center_y': 0.45}
+                    size_hint_x: 0.5
+                    width: "200dp"
+                    font_size: "15dp"
+                MDLabel:
+                    text: "Where are you headed?"
+                    size_hint_x: 0.7
+                    pos_hint: {'center_x': 0.50, 'center_y': 0.52}
+                    font_style: "Caption"
+                    theme_text_color: "Custom"
+                    text_color: [0, 0, 0, 1]
+                MDIconButton
+                    icon: "magnify"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.45}
+                    size_hint_x: None
+                    on_release:
+                        root.revroute3()
+                MDTextField:
+                    id: passenger3
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '1'
+                    pos_hint: {'center_x': 0.30, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDTextField:
+                    id: minimum_fare3
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1
+                    halign: "center"
+                    text: '9'
+                    pos_hint: {'center_x': 0.7, 'center_y': 0.30}
+                    size_hint_x: 0.30
+                    width: "100"
+                    font_size: "15dp"
+                MDIconButton:
+                    icon: "arrow-left"
+                    pos_hint: {'center_x': 0.20, 'center_y': 0.20}
+                    size_hint_x: None
+                    user_font_size: "20dp"
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "right"
+                MDFlatButton:
+                    text: "SUBMIT"
+                    font_name: "RobotoMedium"
+                    font_size: "12dp"
+                    increment_width: "60dp"
+                    text_color: [1, 1, 1, 1]
+                    pos_hint: {'center_x': 0.65, 'center_y': 0.20}
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        root.validate3()
+                MDIconButton
+                    icon: "refresh"
+                    user_font_size: "25dp"
+                    pos_hint: {'center_x': 0.35, 'center_y': 0.20}
+                    size_hint_x: None
+                    on_release:
+                        root.refresh3()

@@ -1,0 +1,188 @@
+# Output Window
+<OutputWindow>:
+    name: "output"
+    status: status.__self__
+    discount: discount.__self__
+    transit: transit.__self__
+    total: total.__self__
+    distance: distance.__self__
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba : 1, 1, 1, 1
+            Rectangle:
+                size:self.size
+        MDCard:
+            size_hint: 0.8, 0.90
+            size: "300", "400dp"
+            pos_hint: {"center_x": .5, "center_y": .50}
+            md_bg_color: 255/255, 255/255, 255/255, 1
+            border_radius: 20
+            radius: [15]
+            elevation: 0
+            FloatLayout:
+                Image:
+                    source: 'logo2.png'
+                    pos_hint: {"center_x": .5, "center_y": 0.80}
+                    size_hint: 0.5, .5
+        FloatLayout:
+            MDLabel:
+                text: "        Good Day! Here is the summary of your transaction."
+                color_mode: "custom"
+                size_hint_x: 0.7
+                font_style: "Body2"
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.50, 'center_y': 0.77}
+        FloatLayout:
+            MDLabel:
+                text: "D E T A I L S"
+                bold: True
+                size_hint_x: 0.80
+                halign: "center"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.70}
+                font_style: "Body1"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDTextField:
+                id: transit
+                text: ""
+                hint_text: "    "
+                disabled: True
+                font_size: "15dp"
+                font_style: "Body2"
+                color_mode: 'custom'
+                halign: "center"
+                mode: "rectangle"
+                size_hint_x: 0.65
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.50, 'center_y': 0.57}
+            MDLabel:
+                text: "Transit"
+                bold: "True"
+                size_hint_x: 0.80
+                pos_hint: {'center_x': 0.57, 'center_y': 0.63}
+                font_style: "Overline"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDTextField:
+                id: discount
+                text: ""
+                font_style: "Body2"
+                hint_text: "    "
+                disabled: True
+                font_size: "15dp"
+                halign: "center"
+                color_mode: 'custom'
+                mode: "rectangle"
+                size_hint_x: 0.35
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.65, 'center_y': 0.37}
+            MDLabel:
+                text: "Discount"
+                bold: "True"
+                size_hint_x: 0.80
+                pos_hint: {'center_x': 0.57, 'center_y': 0.37}
+                font_style: "Overline"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDTextField:
+                id: status
+                disabled: True
+                font_style: "Body2"
+                text: ""
+                hint_text: "    "
+                font_size: "15dp"
+                halign: "center"
+                color_mode: 'custom'
+                mode: "rectangle"
+                size_hint_x: 0.35
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.65, 'center_y': 0.47}
+            MDLabel:
+                text: "Category"
+                bold: "True"
+                size_hint_x: 0.80
+                pos_hint: {'center_x': 0.57, 'center_y': 0.47}
+                font_style: "Overline"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDTextField:
+                id: distance
+                disabled: True
+                font_style: "Body2"
+                text: ""
+                hint_text: "    "
+                font_size: "15dp"
+                halign: "center"
+                color_mode: 'custom'
+                mode: "rectangle"
+                size_hint_x: 0.35
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.65, 'center_y': 0.27}
+            MDLabel:
+                text: "Distance"
+                bold: "True"
+                size_hint_x: 0.80
+                pos_hint: {'center_x': 0.57, 'center_y': 0.27}
+                font_style: "Overline"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDTextField:
+                size_hint_x: 0.7
+                halign: "center"
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                disabled: True
+                pos_hint: {'center_x': 0.5, 'center_y': 0.67}
+            MDTextField:
+                size_hint_x: 0.7
+                line_color_focus: 0, 0, 0, 1
+                halign: "center"
+                line_color_normal: 0, 0, 0, 1
+                disabled: True
+                pos_hint: {'center_x': 0.5, 'center_y': 0.22}
+            MDLabel:
+                text: "Total"
+                bold: "True"
+                size_hint_x: 0.80
+                pos_hint: {'center_x': 0.60, 'center_y': 0.17}
+                font_style: "Overline"
+                theme_text_color: "Custom"
+                text_color: [20/255, 20/255, 20/255, 1]
+            MDLabel
+                id: total
+                text: ""
+                color_mode: "custom"
+                size_hint_x: 0.35
+                font_style: "Body2"
+                font_size: "15dp"
+                halign: "center"
+                line_color_focus: 0, 0, 0, 1
+                line_color_normal: 0, 0, 0, 1
+                pos_hint: {'center_x': 0.65, 'center_y': 0.17}
+            MDFlatButton:
+                text: "PARA"
+                font_name: "RobotoMedium"
+                font_size: "12dp"
+                text_color: [1, 1, 1, 1]
+                increment_width: "145dp"
+                pos_hint: {'center_x': 0.57, 'center_y': 0.10}
+                md_bg_color: [20/255, 20/255, 20/255, 1]
+                border_radius: 20
+                radius: [15]
+                on_release:
+                    root.reset()
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {'center_x': 0.20, 'center_y': 0.10}
+                size_hint_x: None
+                user_font_size: "20dp"
+                on_release:
+                    app.root.current = "second"
+                    root.manager.transition.direction = "right"
+                    
